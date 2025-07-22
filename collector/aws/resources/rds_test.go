@@ -238,7 +238,7 @@ func TestDetectRDS(t *testing.T) {
 func TestGetPricingDatabaseEngine(t *testing.T) {
 	rdsManager, err := RDSManagerMock()
 	if err != nil {
-		t.Fatalf(err.Error())
+		t.Fatalf("RDSManagerMock failed: %v", err)
 	}
 
 	testResults := []string{"PostgreSQL", "Aurora MySQL", "mysql", "docdb", "Aurora MySQL"}
@@ -253,7 +253,7 @@ func TestGetPricingDatabaseEngine(t *testing.T) {
 func TestGetPricingDeploymentOption(t *testing.T) {
 	rdsManager, err := RDSManagerMock()
 	if err != nil {
-		t.Fatalf(err.Error())
+		t.Fatalf("RDSManagerMock failed: %v", err)
 	}
 
 	testResults := []string{"Multi-AZ", "Single-AZ", "Single-AZ", "Single-AZ", "Single-AZ"}
